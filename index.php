@@ -2,7 +2,7 @@
 include "dissociated-press.php";
 $corpus = "";
 if (isset($_POST['corpus'])){
-	$corpus = $_POST['corpus'];
+	$corpus = htmlspecialchars($_POST['corpus']);
 	$dis = new dissociatedpress();
 	$result = $dis->dissociate($corpus);
 }
